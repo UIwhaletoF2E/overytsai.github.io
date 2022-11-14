@@ -220,16 +220,15 @@ svg {
 .btn-4:hover {
     background-image: url(../img/btn-4-hover.svg);
 }
-
 .main-btn.big-btn {
-    font-size: 28px;
-    line-height: 37px;
-    letter-spacing: 9px;
+    font-size: 32px;
+    line-height: 50px;
+    letter-spacing: 10px;
     background-image: url(../img/btn-signup.svg);
     background-size: cover;
-    padding: .8em 1em;
+    padding: 1em 2em;
     width: fit-content;
-    margin: .5em 0;
+    margin: 1em 0;
 }
 .main-btn.big-btn:hover {
     background-image: url(../img/btn-signup-hover.svg);
@@ -287,14 +286,14 @@ svg {
 
 #banner .index-title,
 .title-group h1  {
-    font-size: 11em;
+    font-size: 13em;
     margin: 0 0 .5em;
     filter: drop-shadow(-15px 8px 0px #fff);
 }
 
 #banner .sub-title,
 .title-group h2  {
-    font-size: 2.5em;
+    font-size: 4.5em;
 }
 
 .type-group {
@@ -415,7 +414,7 @@ svg {
 
 .light {
     bottom: 3%;
-    right: 0;
+    right: 3%;
     mix-blend-mode: exclusion;
 }
 #earth-group,
@@ -425,15 +424,15 @@ svg {
 }
 
 .earth {
-    width: 48%;
-    right: 0%;
-    top: 19%;
+    width: 45%;
+    right: -2%;
+    top: 22%;
 }
 
 .light-num {
-    top: 33%;
-    width: 25%;
-    right: 12%;
+    top: 35%;
+    width: 23%;
+    right: 9%;
 }
 .light-point {
   position: absolute;
@@ -762,14 +761,14 @@ svg {
     display: flex;
     flex-direction: column;
     margin: 3%;    
-    font-size: 48px;
+    font-size: 56px;
     position: relative;
 }
 .schedule-small::before {
     content: '';
     background-image: url(../img/schedule-arrow.svg);
-    width: 3em;
-    height: 3em;
+    width: 3.5em;
+    height: 3.5em;
     background-size: cover;
     position: absolute;
     left: -40%;
@@ -795,15 +794,15 @@ svg {
 }
 .schedule-large {
     width: 90%;
-    font-size: 52px;
+    font-size: 56px;
     margin:3% auto 10% auto;
     position: relative;
 }
 .schedule-large.schedule-update::after {
     content: '';
     background-image: url(../img/schedule-arrow.svg);
-    width: 3em;
-    height: 3em;
+    width: 3.5em;
+    height: 3.5em;
     background-size: cover;
     position: absolute;
     right: 45%;
@@ -811,8 +810,8 @@ svg {
     transform: rotate(270deg);
 }
 .schedule-block {
-    font-size: 36px;
-    padding: 15% 3% 6.25% 3%;
+    font-size: 40px;
+    padding: 15% 21% 6.25% 3%;
     background-image: url(../img/bk5-infoblock.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -1134,6 +1133,58 @@ footer p {
 }
 
 /* RWD */
+@media(max-width: 1920px) {
+    .main-btn.big-btn {
+        font-size: 28px;
+        line-height: 37px;
+        padding: .8em 1em;
+        margin: .5em 0;
+    }
+    #banner .index-title, .title-group h1 {
+        font-size: 11em;
+        margin: 0 0 0.5em;
+    }
+    #banner .sub-title,
+    .title-group h2  {
+        font-size: 2.5em;
+    }
+    .light {
+        bottom: 3%;
+        right: 0;
+    }
+    .earth {
+        width: 48%;
+        right: 0%;
+        top: 19%;
+    }
+
+    .light-num {
+        top: 33%;
+        width: 25%;
+        right: 12%;
+    }
+    /*block05*/
+    .schedule-block {
+        font-size: 36px;
+        padding: 15% 3% 6.25% 3%;
+    }
+    .schedule-small {
+        font-size: 48px;
+    }
+    .schedule-small::before {
+        width: 3em;
+        height: 3em;
+        left: -40%;
+    }
+    .schedule-large {
+        font-size: 52px;
+    }
+    .schedule-large.schedule-update::after {
+        width: 3em;
+        height: 3em;
+        right: 45%;
+    }
+}
 @media(max-width: 1440px) {
     .header-left {
         align-items: center;
