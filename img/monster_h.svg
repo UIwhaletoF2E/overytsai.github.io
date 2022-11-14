@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="monster_h" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="114px" height="232px" viewBox="0 0 114 232" enable-background="new 0 0 114 232" xml:space="preserve">
+<polygon id="body" fill="#4CD30C" points="108,60 108,48 102,48 102,36 93,36 93,30 87,30 75,30 63,30 51,30 39,30 27,30 21,30 
+	21,36 12,36 12,48 6,48 6,60 0,60 0,232 114,232 114,60 "/>
+<rect id="hair1" x="27" fill="#4CD30C" width="12" height="30"/>
+<rect id="hair2" x="51" fill="#4CD30C" width="12" height="30"/>
+<rect id="hair3" x="75" fill="#4CD30C" width="12" height="30"/>
+<rect x="49" y="63" fill="#E8E8E8" width="42" height="42"/>
+<rect id="eye" x="67" y="69" width="18" height="18"/>
+</svg>

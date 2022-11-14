@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The F2E 前端 & UI 修煉精神時光屋</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- import GSAP pligin -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <!-- typed.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+    <!-- index-main -->
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+<body>
+    <nav class="header">
+        <a href="theF2E.html" class="rwd-menu"><span class="material-symbols-outlined">menu</span></a>
+        <div class="header-left">
+            <div class="logo">
+                <a href="theF2E.html">
+                    <img src="img/logo.svg" alt="The F2E 首頁">
+                </a>
+            </div>
+            <a class="theF2E" href="theF2E.html">
+                <img src="img/THE_F2E.svg" alt="The F2E 首頁">
+            </a>
+        </div>
+           <ul class="menu-list">
+             <li class="menu-item"><a href="news.html">關卡資訊</a></li>
+             <li class="menu-item"><a href="https://hackmd.io/ofJD4K7iSI65V19zxC7d0w">攻略資源</a></li>
+             <li class="menu-item"><a href="jobs.html">求職專區</a></li>
+           </ul>
+           <div class="btn-group">
+               <a href="#" class="btn-4 main-btn sign-up">註冊報名</a>
+               <a href="#" class="btn-2 main-btn log-in">登入</a>
+           </div>
+    </nav>
+    <main>
+        <section id="banner" class="section section-block1 para-section">            
+            <div class="star-group">
+                <img class="star-trck fade-in" src="img/start_track.svg" alt="行星軌跡">
+                <img class="star fade-in-more" src="img/star.svg" alt="行星">
+            </div>
+            <div class="section-info">
+                <div class="title-group">
+                    <h1 class="display-none">The F2E</h1>
+                    <h2 class="display-none">互動式網頁設計!</h2>
+                    <div class="type-group"><h1 class="index-title text-green text-bit typed"></h1></div>
+                    <div class="type-group"><h2 class="sub-title text-white text-pixel typed"></h2></div>
+                    <!-- <h1 class="index-title text-green text-bit f2e-typewriter">The F2E</h1>
+                    <h2 class="sub-title text-white text-pixel subtitle-typewriter">互動式網頁設計!</h2> -->
+                    <div class="title-shine" id="title-shine">
+                        <img src="img/shine.svg" class="title-shine01">
+                        <img src="img/shine.svg" class="title-shine02">
+                    </div>
+                </div>
+                <a href="#" class="btn main-btn sign-up big-btn fade-in">我要報名↗</a>
+                <div class="number-count fade-in">
+                    <span class="count-info text-green text-bit">Total<b>1035</b></span>
+                    <span class="count-info text-green text-bit">Personal<b>935</b></span>
+                    <span class="count-info text-green text-bit">Team<b>37</b></span>
+                </div>
+            </div>
+            <div class="monster fade-in-more">
+                <div class="monster-h">                    
+                    <svg version="1.1" id="monster_h" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="114px" height="232px" viewBox="0 0 114 232" enable-background="new 0 0 114 232" xml:space="preserve">
+                    <polygon id="body" fill="#4CD30C" points="108,60 108,48 102,48 102,36 93,36 93,30 87,30 75,30 63,30 51,30 39,30 27,30 21,30 
+                        21,36 12,36 12,48 6,48 6,60 0,60 0,232 114,232 114,60 "/>
+                    <rect id="hair1" class="monster-hair" x="27" fill="#4CD30C" width="12" height="30"/>
+                    <rect id="hair2" class="monster-hair" x="51" fill="#4CD30C" width="12" height="30"/>
+                    <rect id="hair3" class="monster-hair" x="75" fill="#4CD30C" width="12" height="30"/>
+                    <g id="eyes">
+                        <rect x="49" y="63" fill="#E8E8E8" width="42" height="42"/>
+                        <rect class="eye" id="eye" x="67" y="69" width="18" height="18"/>
+                    </g>
+                    </svg>
+                </div>
+                <div class="monster-s">
+                    <svg version="1.1" id="monster_s" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="144px" height="114px" viewBox="0 0 144 114" enable-background="new 0 0 144 114" xml:space="preserve">
+                    <path id="body" fill="#4CD30C" d="M108,0H36v12H21v12H9v12H0v78h144V36h-9V24h-12V12h-15V0z"/>
+                    <g id="eyes">
+                        <rect x="21" y="38" fill="#E8E8E8" width="36" height="24"/>
+                        <rect class="eye" id="eye1" x="42" y="41" width="12" height="12"/>
+                        <rect x="79" y="38" fill="#E8E8E8" width="36" height="24"/>
+                        <rect class="eye" id="eye2" x="100" y="41" width="12" height="12"/>
+                    </g>
+                    </svg>
+
+                </div>
+            </div>
+            <div class="banner-right">
+                <div class="light-group fade-in-right">
+                    <img id="light" class="light shine-first" src="img/light.svg" alt="light">
+                    <div id="earth-group">
+                        <img id="earth" class="earth" src="img/earth.svg" alt="earth">
+                        <img id="light-num" class="light-num" src="img/4th.svg" alt="4th">
+                    </div>
+                    <div id="light-point-group">
+                        <div class="light-point shine-02">
+                            <svg version="1.1" id="lisht-point" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 590 960"  xml:space="preserve">
+                            <g id="gray-shineUP">
+                                <rect x="534" y="379" class="st0" width="4" height="4"/>
+                                <rect x="565" y="353" class="st0" width="4" height="4"/>
+                                <rect x="578" y="37" class="st0" width="4" height="4"/>
+                                <rect x="260" y="23" class="st0" width="4" height="4"/>
+                                <rect x="111" class="st0" width="4" height="4"/>
+                                <rect x="62" y="50" class="st0" width="4" height="4"/>
+                                <rect x="111" y="164" class="st0" width="4" height="4"/>
+                            </g>
+                            <g id="green-shineL" class="shine-infinite">
+                                <rect x="499" y="665" class="st1" width="12" height="12"/>
+                                <rect x="495" y="85" class="st1" width="12" height="12"/>
+                                <rect x="155" y="97" class="st1" width="12" height="12"/>
+                                <rect x="231" y="849" class="st1" width="12" height="12"/>
+                                <rect x="87" y="379" class="st1" width="12" height="12"/>
+                            </g>
+                        </div>
+                        <div class="light-point shine-01">
+                            <svg version="1.1" id="lisht-point" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 590 960"  xml:space="preserve">            
+                            <g id="green-shineS">
+                                <rect x="497" y="485" class="st1" width="4" height="4"/>
+                                <rect x="516" y="50" class="st1" width="4" height="4"/>
+                                <rect x="366" y="50" class="st1" width="4" height="4"/>
+                                <rect x="123" y="91" class="st1" width="4" height="4"/>
+                                <rect x="167" y="58" class="st1" width="4" height="4"/>
+                                <rect x="486" y="701" class="st1" width="4" height="4"/>
+                                <rect x="415" y="763" class="st1" width="4" height="4"/>
+                                <rect x="243" y="521" class="st1" width="4" height="4"/>
+                                <rect x="119" y="483" class="st1" width="4" height="4"/>
+                                <rect x="30" y="331" class="st1" width="4" height="4"/>
+                                <rect x="207" y="841" class="st1" width="4" height="4"/>
+                                <rect x="229" y="816" class="st1" width="4" height="4"/>
+                                <rect x="95" y="677" class="st1" width="4" height="4"/>
+                            </g>
+                            <g id="gray-shineDown">
+                                <rect x="456" y="633" class="st0" width="4" height="4"/>
+                                <rect x="367" y="845" class="st0" width="4" height="4"/>
+                                <rect x="203" y="738" class="st0" width="4" height="4"/>
+                                <rect x="205" y="500" class="st0" width="4" height="4"/>
+                                <rect x="120" y="714" class="st0" width="4" height="4"/>
+                                <rect x="83" y="545" class="st0" width="4" height="4"/>
+                            </g>
+                            </svg>
+                        </div>
+                        <div class="light-point shine-03">
+                            <svg version="1.1" id="lisht-point" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 590 960"  xml:space="preserve">
+
+                            <g id="gray-shineL">
+                                <rect x="400" y="868" class="st0" width="8" height="8"/>
+                                <rect y="396" class="st0" width="8" height="8"/>
+                                <rect x="87" y="701" class="st0" width="8" height="8"/>
+                                <rect x="467" y="21" class="st0" width="8" height="8"/>
+                            </g>
+                            <g id="green-shineM ">
+                                <rect x="475" y="451" class="st1" width="8" height="8"/>
+                                <rect x="531" y="644" class="st1" width="8" height="8"/>
+                                <rect x="526" y="115" class="st1" width="8" height="8"/>
+                                <rect x="582" y="231" class="st1" width="8" height="8"/>
+                                <rect x="103" y="31" class="st1" width="8" height="8"/>
+                                <rect x="245" y="868" class="st1" width="8" height="8"/>
+                                <rect x="393" y="777" class="st1" width="8" height="8"/>
+                                <rect x="27" y="517" class="st1" width="8" height="8"/>
+                                <rect x="245" y="701" class="st1" width="8" height="8"/>
+                                <rect x="111" y="412" class="st1" width="8" height="8"/>
+                            </g>
+                        </div>
+                    </div>
+                    <img class="light-set" src="img/light-set.svg" alt="light-set">
+                    
+                </div>
+            </div>
+        </section>
+        <section id="section2" class="section section-block2 para-section">
+            <div class="wall-block bg">
+                <h2 class="pain-title text-pixel">你是否曾遇過以下的困擾?</h2>
+                <div class="pain-point-groups">
+                    <div class="pain-points pp01">
+                        <div class="pain-mask"></div>
+                        <img src="img/pain-img01.png" alt="痛點01" class="pain-img">
+                    </div>
+                    <div class="pain-points pp02">
+                        <div class="pain-mask"></div>
+                        <img src="img/pain-img02.png" alt="痛點02" class="pain-img">
+                    </div>
+                    <div class="pain-points pp03">
+                        <div class="pain-mask"></div>
+                        <img src="img/pain-img03.png" alt="痛點03" class="pain-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section3" class="section section-block3 text-pixel">
+            <div class="deal-kanban">
+                <h2 class="kanban-title">互動式網頁設計</h2>
+            </div>
+            <div class="deal-block">                                 
+                <p class="deal-talk">Deal!</p>
+                <div class="deal-bg">
+                    <img class="deal01" src="img/bk3-shine-left01.svg" alt="block3-shine">
+                    <img class="deal02 shine-02" src="img/bk3-shine-left02.svg" alt="block3-shine">     
+                    <img class="deal03 shine-02" src="img/bk3-shine-right02.svg" alt="block3-shine">
+                    <img class="deal04" src="img/bk3-shine-right01.svg" alt="block3-shine">
+                </div> 
+                <div class="deal-role">  
+                    <img class="deal-ui" src="img/bk3-UI-designer.svg" alt="UI designer">
+                    <img class="deal-f2e" src="img/bk3-RD.svg" alt="Front End Engineer">
+                </div>
+            </div>
+        </section>
+        <!-- <section id="section4" class="section section-block4 text-pixel">
+            
+        </section> -->
+        <div class="section4-bg">
+            <section id="section4" class="section section-block4 text-pixel">
+                  <div id="topics-container" style="width: 400%;">
+                    <article id="topic-start" class="topic-panel full-screen topic-mask">
+                      <div class="topic-row">
+                          <div class="topic-info">
+                            <img src="img/topic-loadding.svg" alt="">
+                          </div>
+
+                          <div class="topic-img">
+                            <div class="mask1">
+                                <div class="mask-text">
+                                    <h2>&emsp;年度最強合作，三大主題來襲</h2>
+                                    <p>&emsp;&emsp;&emsp;各路廠商強強聯手，共同設計出接地氣的網頁互動挑戰</p>
+                                </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                    </article>
+                    <article id="topic-1" class="topic-panel full-screen">
+                      <div class="topic-row">
+                          <div class="topic-info">
+                            <h5>Week 1</h5>
+                            <h3>The<br>F2E活動網頁設計</h3>
+                            <h5>#視差滾動</h5>
+                            <button class="look-more">查看關卡細節</button>
+
+                            <div class="panels-navigation">
+                              
+                              <div class="nav-panel" data-sign="minus"><a href="#topic-3" class="anchor up">
+                                  <svg version="1.1" id="tv-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 78 48" style="enable-background:new 0 0 78 48;" xml:space="preserve">
+                                  <style type="text/css">
+                                    .st0{fill:#4CD30C;}
+                                  </style>
+                                  <polygon class="st0" points="72,36 72,30 66,30 66,24 60,24 60,18 54,18 54,12 48,12 48,6 42,6 42,0 36,0 36,6 30,6 30,12 24,12 
+                                    24,18 18,18 18,24 12,24 12,30 6,30 6,36 0,36 0,42 0,48 6,48 12,48 18,48 24,48 30,48 36,48 42,48 48,48 54,48 60,48 66,48 72,48 
+                                    78,48 78,42 78,36 "/>
+                                  </svg>
+                              </a></div>
+                              <div class="nav-panel" data-sign="plus"><a href="#topic-2" class="anchor down">
+                                  <svg version="1.1" id="tv-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 78 48" style="enable-background:new 0 0 78 48;" xml:space="preserve">
+                                  <style type="text/css">
+                                    .st0{fill:#4CD30C;}
+                                  </style>
+                                  <polygon class="st0" points="72,36 72,30 66,30 66,24 60,24 60,18 54,18 54,12 48,12 48,6 42,6 42,0 36,0 36,6 30,6 30,12 24,12 
+                                    24,18 18,18 18,24 12,24 12,30 6,30 6,36 0,36 0,42 0,48 6,48 12,48 18,48 24,48 30,48 36,48 42,48 48,48 54,48 60,48 66,48 72,48 
+                                    78,48 78,42 78,36 "/>
+                                  </svg>
+                              </a></div>
+                            </div>
+                          </div>
+
+                          <div class="topic-img">
+
+                            <img src="img/bk4-topic01.png" alt="The F2E活動網頁設計">
+
+                          </div>
+                        </div>
+                    </article>
+                    <article id="topic-2" class="topic-panel full-screen">
+                        <div class="topic-row">
+                          <div class="topic-info">
+                            <h5>Week 2</h5>
+                            <h3>今晚，<br>我想來點點簽</h3>
+                            <h5>#Canvas</h5>
+                            <button class="look-more">查看關卡細節</button>
+
+                            <div class="panels-navigation">
+                              <div class="nav-panel" data-sign="minus"><a href="#topic-1" class="anchor up">
+                                  <svg version="1.1" id="tv-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 78 48" xml:space="preserve">
+                                  <style type="text/css">
+                                    .st0{fill:#4CD30C;}
+                                  </style>
+                                  <polygon class="st0" points="72,36 72,30 66,30 66,24 60,24 60,18 54,18 54,12 48,12 48,6 42,6 42,0 36,0 36,6 30,6 30,12 24,12 
+                                    24,18 18,18 18,24 12,24 12,30 6,30 6,36 0,36 0,42 0,48 6,48 12,48 18,48 24,48 30,48 36,48 42,48 48,48 54,48 60,48 66,48 72,48 
+                                    78,48 78,42 78,36 "/>
+                                  </svg>
+                              </a></div>
+                              <div class="nav-panel" data-sign="plus"><a href="#topic-3" class="anchor down">
+                                  <svg version="1.1" id="tv-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 78 48" xml:space="preserve">
+                                  <style type="text/css">
+                                    .st0{fill:#4CD30C;}
+                                  </style>
+                                  <polygon class="st0" points="72,36 72,30 66,30 66,24 60,24 60,18 54,18 54,12 48,12 48,6 42,6 42,0 36,0 36,6 30,6 30,12 24,12 
+                                    24,18 18,18 18,24 12,24 12,30 6,30 6,36 0,36 0,42 0,48 6,48 12,48 18,48 24,48 30,48 36,48 42,48 48,48 54,48 60,48 66,48 72,48 
+                                    78,48 78,42 78,36 "/>
+                                  </svg>
+                              </a></div>
+                            </div>
+                          </div>                      
+                          <div class="topic-img">
+
+                            <img src="img/bk4-topic02.png" alt="今晚，我想來點點簽">
+
+                          </div>
+                        </div>
+                    </article>
+                    <article id="topic-3" class="topic-panel full-screen">
+                        <div class="topic-row">
+                          <div class="topic-info">
+                            <h5>Week 3</h5>
+                            <h3>Scrum<br>新手村</h3>
+                            <h5>#JS<br>draggable</h5>
+                            <button class="look-more">查看關卡細節</button> 
+
+                            <div class="panels-navigation">
+                              <div class="nav-panel" data-sign="minus"><a href="#topic-2" class="anchor up">
+                                  <svg version="1.1" id="tv-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 78 48" xml:space="preserve">
+                                  <style type="text/css">
+                                    .st0{fill:#4CD30C;}
+                                  </style>
+                                  <polygon class="st0" points="72,36 72,30 66,30 66,24 60,24 60,18 54,18 54,12 48,12 48,6 42,6 42,0 36,0 36,6 30,6 30,12 24,12 
+                                    24,18 18,18 18,24 12,24 12,30 6,30 6,36 0,36 0,42 0,48 6,48 12,48 18,48 24,48 30,48 36,48 42,48 48,48 54,48 60,48 66,48 72,48 
+                                    78,48 78,42 78,36 "/>
+                                  </svg>
+                              </a></div>
+                              <div class="nav-panel" data-sign="plus"><a href="#topic-1" class="anchor down">
+                                  <svg version="1.1" id="tv-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 78 48" xml:space="preserve">
+                                  <style type="text/css">
+                                    .st0{fill:#4CD30C;}
+                                  </style>
+                                  <polygon class="st0" points="72,36 72,30 66,30 66,24 60,24 60,18 54,18 54,12 48,12 48,6 42,6 42,0 36,0 36,6 30,6 30,12 24,12 
+                                    24,18 18,18 18,24 12,24 12,30 6,30 6,36 0,36 0,42 0,48 6,48 12,48 18,48 24,48 30,48 36,48 42,48 48,48 54,48 60,48 66,48 72,48 
+                                    78,48 78,42 78,36 "/>
+                                  </svg>
+                              </a></div>
+                            </div>
+                          </div>
+                          <div class="topic-img">
+
+                            <img src="img/bk4-topic03.png" alt="Scrum 新手村">
+
+                          </div>
+                        </div>
+                    </article>
+                  </div>
+            </section>
+        </div>
+        <section id="section5" class="section section-block5 text-pixel">
+            <div class="schedule schedule-small schedule-signup">
+                <h2 class="en">Sign Up</h2>
+                <h2 class="tw">報名開始</h2>
+                <h4>10/13 - 10/30</h4>
+                <a href="#" class="btn main-btn sign-up big-btn">我要報名↗</a>
+            </div>
+            <div class="schedule schedule-large schedule-update">
+                <h2 class="en">Upload</h2>
+                <h2 class="tw">各組上傳作品</h2>
+                <h4>10/31 UI、團體組開賽&emsp;11/7 前端組開賽</h4>
+                <div class="schedule-block pixel-block">
+                    <div class="schedule-row">
+                        <h3>各週挑戰主題，若未在隔週一中午12:00上傳作品者該週即為挑戰失敗!!!</h3>
+                        <h6>※活動採用 UI、前端接力合作形式，前端工程師可採用 UI 設計師的設計稿，一同完成完整作品。</h6>
+                    </div>
+                    <div class="schedule-info-group">
+                        <div class="schedule-info">
+                            <h4>10/31中午12:00</h4>
+                            <div class="schedule-item">
+                                <h6>Week 1主題</h6>
+                                <h5>開放登錄UI作品</h5>
+                            </div>
+                        </div>
+                        <div class="schedule-info">
+                            <h4>隔週一中午12:00</h4>
+                            <div class="schedule-item">
+                                <h6>Week 1主題</h6>
+                                <h5>UI截止 / 開放登錄前端作品</h5>
+                            </div>
+                            <div class="schedule-item">
+                                <h6>Week 2主題</h6>
+                                <h5>開放登錄UI作品</h5>
+                            </div>
+                        </div>
+                        <div class="schedule-info">
+                            <h4>再隔週一中午12:00</h4>
+                            <div class="schedule-item">
+                                <h6>Week 1主題</h6>
+                                <h5>前端截止</h5>
+                            </div>
+                            <div class="schedule-item">
+                                <h6>Week 2＆3主題</h6>
+                                <h5>同Week1時程類推...</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule schedule-small schedule-stream">
+                <h2 class="en">Stream</h2>
+                <h2 class="tw">線上直播</h2>
+                <h4>11/3 - 11/24（各週四）</h4>
+            </div>
+            <div class="schedule schedule-large schedule-race">
+                <h2 class="tw">區區修煉已經無法滿足了嗎？還有比賽等著你！</h2>
+                <div class="schedule-block-row">
+                    <div class="schedule-item schedule-review">
+                        <h3 class="schedule-title">評審機制</h3>
+                        <div class="schedule-item">
+                            <h5>初選：</h5>
+                            <p>將由六角學院前端、UI 評審進行第一波篩選。</p>
+                        </div>
+                        <img class="schedule-arrow" src="img/schedule-review-arrow.svg" alt=">>">
+                        <div class="schedule-item">
+                            <h5>決選：</h5>
+                            <p>由六角學院與贊助廠商討論，進行最後篩選，並於 12/30(五) 由評審進行直播公布名單！</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item schedule-award">
+                        <h3 class="schedule-title">獎項</h3>
+                        <ul class="award-list">
+                            <li>初選佳作&ensp;共六十位&emsp;<em>數位獎狀</em>
+                                <p>每週主題個人組十位、團體組十組</p>
+                            </li>
+                            <li>個人企業獎&ensp;共六位&emsp;<em>NTD 3,000/位</em>
+                                <p>每週主題各 2 名，設計 1 位、前端 1 位</p>
+                            </li>
+                            <li>團體企業獎&ensp;共三組&emsp;<em>NTD 10,000/組</em>
+                                <p>每週主題各 1 組</p>
+                            </li>
+                            <li>以上皆提供完賽數位獎狀！</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="et-group">
+                <div class="et-talk float-updown">
+                    <span>獎金獎狀等你唷!!!</span>
+                    <img src="img/bk5-et-talking.svg" alt="外星人說話">
+                </div>
+                <img src="img/bk5-et.svg" alt="右下角外星人">
+            </div>
+        </section>
+        <section id="section6" class="section section-block6">
+            <div class="ticker-group">
+                <div class="text-ticker text-pixel">
+                    各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享
+                </div>
+                <div class="text-ticker text-pixel">
+                    各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享
+                </div>
+                <div class="text-ticker text-pixel">
+                    各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享
+                </div>
+                <div class="text-ticker text-pixel">
+                    各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享
+                </div>
+                <div class="text-ticker text-pixel">
+                    各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享&emsp;各界大神接力分享
+                </div>
+            </div>
+            <div class="speaker-group">
+                <div class="speaker">
+                    <img src="img/speaker-1.png" alt="李明">
+                    <div class="speaker-info">
+                        <div class="info-title">
+                            <h4>網站的動態趨勢</h4>
+                            <h5>11/3（四）20:00 ~ 21:30</h5>
+                        </div>
+                        <h6>李明</h6>
+                        <p>版塊設計創辦人暨設計總監</p>
+                    </div>
+                </div>
+                <div class="speaker">
+                    <img src="img/speaker-2.png" alt="Leo">
+                    <div class="speaker-info">
+                        <div class="info-title">
+                            <h4>jQuery 也可以做到的互動效果</h4>
+                            <h5>11/10（四）20:00 ~ 21:30</h5>
+                        </div>
+                        <h6>Leo</h6>
+                        <p>Angular Taiwan 傳教士</p>
+                    </div>
+                </div>
+                <div class="speaker">
+                    <img src="img/speaker-3.png" alt="邱繼緯">
+                    <div class="speaker-info">
+                        <div class="info-title">
+                            <h4>做事不能拖拖拉拉，但網頁可以：draggable.js 介紹</h4>
+                            <h5>11/17（四）20:00 ~ 21:30</h5>
+                        </div>                        
+                        <h6>邱繼緯</h6>
+                        <p>前端工程師</p>                        
+                    </div>
+                </div>
+                <div class="speaker">
+                    <img src="img/speaker-4.png" alt="吳哲宇">
+                    <div class="speaker-info">
+                        <div class="info-title">
+                            <h4>互動式網頁設計工程師該具備哪些技能？</h4>
+                            <h5>11/24（四）20:00 ~ 21:30</h5>
+                        </div>
+                        <h6>吳哲宇</h6>
+                        <p>墨雨互動設計 創辦人、生成式藝術家</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section7" class="section section-block7">
+            <div class="QA-tabs">
+              <ul id="tabs-nav">
+                <li class="active"><a href="#tab1">常見問答</a></li>
+                <li><a href="#tab2">UI 設計師常見問題</a></li>
+                <li><a href="#tab3">前端工程師常見問題</a></li>
+                <li><a href="#tab4">團體組常見問題</a></li>
+              </ul> 
+              <div id="tabs-content">
+                <div id="tab1" class="tab-content active">
+                  <h2>常見問答</h2>
+                  <div class="QA-list">
+                      <details>
+                          <summary>Q：如果某一週不小心挑戰失敗，是否能再繼續挑戰後面關卡？</summary>
+                          A：可以，儘管那週挑戰失敗，之後您仍可以挑選喜歡的關卡進行挑戰，並在該關卡期限內繳交作品。
+                      </details>
+                      <details>
+                          <summary>Q：大家都好強，我怕我做的東西沒有達到過關門檻，不敢登錄作品</summary>
+                         A：這個活動並非競爭性質，每個參賽者都是你的隊友，最大的敵人是你自己，因為你必須定期練功前端開發，讓自己能夠順利完賽。
+                      </details>
+                      <details>
+                          <summary>Q：我不確定自己做的版型有沒有符合過關門檻，要寫到什麼程度才有到過關門檻？</summary>
+                          A：主辦單位其實不會去審核大家的程式碼，只要你認為當週你有針對主題有做到一定程度，就算是半完成品也請大方投稿，不用擔心。
+                      </details>
+                      <details>
+                          <summary>Q：我已經寫到一半了，但時間快來不及，可以先投稿嗎？</summary>
+                          A：可以，有投稿表示你還會持續努力在這次活動上。
+                      </details>
+                  </div>
+                </div>
+                <div id="tab2" class="tab-content hide">
+                  <h2>UI 設計師常見問題</h2>
+                  <div class="QA-list">
+                      <details>
+                          <summary>Q：到時投稿到平台是提供什麼呢？我也不像是工程師可以有 CODEPEN 上傳。</summary>
+                          A：其中投稿的欄位裡面會有一個「線上標示文件」，像是 Adobe XD 便有提供該服務(範例連結)，屆時提供標示文件後，便可讓其他前端工程師採用你的設計稿來開發。
+                      </details>
+                      <details>
+                          <summary> Q：投稿上去的 UI 作品，我知道需要授權讓前端工程師組做成 Web 介面，那授權部分可以設定嗎？</summary>
+                          A：會有的，屆時平台投稿流程上，會讓您的作品可以選擇 CC0、CC BY 等授權，以保障您的 UI 作品權益。
+                      </details>
+                      <details>
+                          <summary>Q：一定要上傳「線上標示文件」嗎？</summary>
+                          A：是的，因為這樣才有辦法讓其他前端工程師，能採用您的設計稿，將您的設計稿實作出網頁格式。如果您是使用 Sketch，也可使用 Sketch Measure 編譯出來後，壓縮 ZIP 到雲端空間 (Dropbox、Google Drive)。
+                      </details>
+                      <details>
+                          <summary>Q：不能使用 PS、Illustrator 設計嗎？</summary>
+                          A：只要您能找到 PS 或 Illustrator 產出線上標示文件的方式就可以，因為前端工程師大部分皆比較少具有繪圖軟體，所以用線上標示文件將會減少許工程師協作上的溝通時間。
+                      </details>
+                      <details>
+                          <summary>Q：當每週一題目出來後，我有一些設計進度也可以先投稿嗎？</summary>
+                          A：可以，團隊在協作過程中，一定也會先出些進度提供前端切版，有進度時您也可以先投稿，讓前端工程師可以先接手，之後再透過 FB 社團來溝通進度即可。
+                      </details>
+                  </div>
+                </div>
+                <div id="tab3" class="tab-content hide">
+                  <h2>前端工程師常見問題</h2>
+                  <div class="QA-list">
+                      <details>
+                          <summary>Q：我可以不依照設計稿，自己做版面嗎？因為我想多練習 JS / 後端</summary>
+                          A：可以，The F2E 活動是希望讓大家人人有功練，所以依照你自己想投入的方向練功即可。CSS 也可以用框架，例如 Bootstrap。
+                      </details>
+                      <details>
+                          <summary>Q：前端介面一定要長得一模一樣嗎？</summary>
+                         A：不用，依照自己的想法來開發也可以
+                      </details>
+                      <details>
+                          <summary>Q：有現成的網頁靜態頁面嗎？我想只練習 JS / 後端就好</summary>
+                          A：這段我們不會提供，畢竟每個人習慣的 Coding style 又不一樣，產出的 HTML、CSS 並非是自己習慣的 Layout 反而會更花時間。
+                      </details>
+                      <details>
+                          <summary>Q：那我只想要練習 JS，HTML/CSS 我用陽春版，不依照設計稿開發可以嗎？</summary>
+                          A：可以，你可以當做我們就是出一個主題，你依照那主題當作參考方向來開發即可。
+                      </details>
+                  </div>
+                </div>
+                <div id="tab4" class="tab-content hide">
+                  <h2>團體組常見問題</h2>
+                  <div class="QA-list">
+                      <details>
+                          <summary>Q：請問團體組最多幾人？</summary>
+                          A：最多 4 人，投稿作品時請派一位組長來投稿即可。
+                      </details>
+                      <details>
+                          <summary>Q：我對獎項有興趣，可以只做第三道主題就好嗎？</summary>
+                         A：可以，您可以在這場活動中，和組員一起打磨第三道主題，不用三個主題都做。
+                      </details>
+                      <details>
+                          <summary>Q：那團體組第三道主題最晚投稿期限為？</summary>
+                          A：團體組投稿第三週 UI 最晚投稿時間為 11/21(一) 中午 12 點，前端最晚投稿期限為 11/28(一) 中午 12 點。
+                      </details>
+                      <details>
+                          <summary>Q：我們團體組比較想做手機 APP，可以投稿並符合評審門檻嗎？</summary>
+                          A：您可以開發手機 APP，若有在期限前投稿也能獲得數位獎狀。但評審門檻僅限 Web 瀏覽器應用開發，Android、iOS APP 則不在評審範圍內，故不符合評審門檻。
+                      </details>                      
+                      <details>
+                          <summary>Q：請問除了前端開發、UI 設計外，還能做其他加值應用嗎？例如後端動態應用整合？</summary>
+                          A：可以的，只要能透過網頁瀏覽器操控您的服務，並有使用到 TDX API 的任何一個 API，您可以依照本次主題「全台公車動態時刻查詢應用服務」做最大的加值整合應用，甚至搭配後端應用，整合多個外部 API 也是可以的。
+                      </details>                      
+                      <details>
+                          <summary>Q：團體組的 UI 設計稿，可以讓『個人組-前端工程師』組別採用嗎？</summary>
+                          A：不能，預設是不能讓『個人組-前端工程師』採用。
+                      </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section id="section8" class="section section-block8 text-pixel">
+            <a href="#" class="sign-up">
+                <h2>立即報名</h2>
+            </a>
+            <div class="company-group">
+                <div class="company">
+                    <h3 class="company-title">鑽石級贊助商</h3>
+                    <div class="company-list">
+                        <a href="https://www.kdanmobile.com/zh-tw" title="凱鈿行動科技"><img src="img/kdan_logo.jpg" alt="凱鈿行動科技"></a>
+                        <a href="https://titansoft.com/tw" title="新加坡商鈦坦科技"><img src="img/titan_logo.jpg" alt="新加坡商鈦坦科技"></a>
+                        <a href="https://blockstudio.tw/" title="版塊設計 Block Studio"><img src="img/blockstudio_logo.jpg" alt="版塊設計"></a>
+                    </div>
+                </div>
+                <div class="company">
+                    <h3 class="company-title">共同推廣</h3>
+                    <div class="company-list">
+                        <a href="https://titansoft.com/tw/go_jira" title="GO JIRA | 新加坡商鈦坦科技"><img src="img/software1.jpg" alt="GO JIRA | 新加坡商鈦坦科技"></a>
+                        <a href="https://titansoft.com/tw/get_miro" title="Get Miro | 新加坡商鈦坦科技"><img src="img/software2.jpg" alt="Get Miro | 新加坡商鈦坦科技"></a>
+                        <a href="https://blockstudio.tw/" title="點點簽DottedSign"><img src="img/software3.jpg" alt="點點簽DottedSign"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h6>Copyright © 2022 HexSchool.All rights reserved./ Design by Jordan Chiou & HexSchool </h6>
+        <p class="timer">報名倒計 : 0天00小時00分00秒</p>
+    </footer>
+</body>
+</html>
