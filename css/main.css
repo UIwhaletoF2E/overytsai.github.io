@@ -666,6 +666,13 @@ svg {
     outline: none;
     border: none;
     margin-top: 1em;
+    cursor: pointer;
+    transform: translateX(-10px) translateY(-10px);
+    box-shadow: 10px 10px 0 #aaa;
+}
+.look-more:hover {
+    transform: translateX(0) translateY(0);
+    box-shadow: none;
 }
 .anchor svg {
     width: 70px;
