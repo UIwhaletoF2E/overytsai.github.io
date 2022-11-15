@@ -467,19 +467,22 @@ svg {
     overflow: hidden;
 }
 .pain-title {
-    font-size: 29px;
+    font-size:33px;
     text-align: center;
     letter-spacing: 1.5rem;
     padding: 1em 3em;
     margin: 0 auto;
     color: var(--green);
     border: 6px solid #4CD30C;
+    background-color: #000;
 }
 .pain-point-groups {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
+    margin: 5% 0;
+    padding-top: 15%;
 }
 .pain-points {
     background-image: url(../img/window.svg);
@@ -530,16 +533,16 @@ svg {
     position: absolute;
     z-index: -1;
     font-size: 1em;
-    transform: scaleY(4.5);
-    top: -105%;
+    transform: scaleY(5.5);
+    top: -118%;
 }
 .kanban-title::after {
     content: '▐';
     position: absolute;
     z-index: -1;
-    font-size: 1em;
-    transform: scaleY(4.5);
-    top: -105%;
+    font-size: 1em;    
+    transform: scaleY(5.5);
+    top: -118%;
     right: 20%;
 }
 .deal-block {
@@ -700,8 +703,8 @@ svg {
 .mask-text p {
     font-size: 30px;
     color: #767872;
-    -webkit-animation: textTicker 8s linear infinite;
-    animation: textTicker 8s linear infinite;
+    -webkit-animation: textTicker 10s linear infinite;
+    animation: textTicker 10s linear infinite;
 }
 .mask1 {
     -webkit-mask-image: url(../img/topic-screen.svg);
@@ -710,7 +713,7 @@ svg {
     mask-repeat: no-repeat;  
     width: 96%;
     height: 372px;
-    transform: translate(9%, 4%);
+    transform: translate(3%, 4%);
 }
 #topic-1 {
     color: #4CD30C;

@@ -56,6 +56,7 @@ $(document).ready(function() {
 	};
 	var painPoint = function() {
 		var block = gsap.utils.toArray('.section-block2');
+		var points =gsap.utils.toArray('.pain-points')
 
 		gsap.set('.pain-img', {xPercent:-50,autoAlpha: 0})
 		gsap.set('.pain-mask', {autoAlpha: 0})
@@ -63,29 +64,30 @@ $(document).ready(function() {
 		var paintl = gsap.timeline({
 		  scrollTrigger: { 
 		    trigger: block,
-		    pin: block,
+		    pin: true,
 		    scrub: 0.5,
 		    start: "top top",
-		    end: "+=50px"
+		    end: () => `+=${points.clientHeight}`,
+		    // end: "+=50px"
 		  },
 		})
 
 		paintl
-		.to('.pp01 .pain-mask', { autoAlpha: 1, duration: .7 }) 
+		.to('.pp01 .pain-mask', { autoAlpha: 1, duration: 7 }) 
 		.to({}, {duration: 1 }) // a little pause in between
-		.to('.pp01 .pain-img', { xPercent: 0, autoAlpha: 1, duration: .5, ease:'power2.inOut' })
+		.to('.pp01 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
 
-		.to({}, {duration: 2 }) // a little pause in between
+		.to({}, {duration: 5 }) // a little pause in between
 
-		.to('.pp02 .pain-mask', { autoAlpha: 1, duration: .7 }) 
+		.to('.pp02 .pain-mask', { autoAlpha: 1, duration: 7 }) 
 		.to({}, {duration: 1 }) // a little pause in between
-		.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: .5, ease:'power2.inOut' })
+		.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
 
-		.to({}, {duration: 2 }) // a little pause in between
+		.to({}, {duration: 5 }) // a little pause in between
 
-		.to('.pp03 .pain-mask', { autoAlpha: 1, duration: .7 }) 
+		.to('.pp03 .pain-mask', { autoAlpha: 1, duration: 7 }) 
 		.to({}, {duration: 1 }) // a little pause in between
-		.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration: .5, ease:'power2.inOut' })
+		.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration:5, ease:'power2.inOut' })
 
 		 // a little pause in between
 	}
