@@ -120,33 +120,40 @@ $(document).ready(function() {
 		gsap.set('.schedule-small', {xPercent:50,autoAlpha: 0})
 		gsap.set('.schedule-large', {xPercent:-120,autoAlpha: 0})
 
-		var righttl = gsap.timeline({
-		  scrollTrigger: { 
-		    trigger: small,
-		    // pin: true,
-		    scrub: 0.5,
-		    start: "top center",
-		    end: "+=500px",
-		    scrub: true
-		  },
-		})
+		
+		small.forEach((small, i) => {
+			var righttl = gsap.timeline({
+			  scrollTrigger: { 
+			    trigger: small,
+			    // pin: true,
+			    scrub: 0.5,
+			    start: "top center",
+			    end: "+=500px",
+			    scrub: true
+			  },
+			});
+			righttl
+			.to(small, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut', delay: 1 });
 
-		righttl
-		.to(small, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut', delay: 1 })
+		});
+		
+		large.forEach((large, i) => {
+			var lefttl = gsap.timeline({
+			  scrollTrigger: { 
+			    trigger: large,
+			    // pin: true,
+			    scrub: 0.5,
+			    start: "top center+=100",
+			    end: "+=300px",
+			    scrub: true
+			  },
+			});
 
-		var lefttl = gsap.timeline({
-		  scrollTrigger: { 
-		    trigger: large,
-		    // pin: true,
-		    scrub: 0.5,
-		    start: "top center+=100",
-		    end: "+=300px",
-		    scrub: true
-		  },
-		})
+			lefttl
+			.to(large, { xPercent: 0, autoAlpha: 1, duration: 8, ease:'power2.inOut' });
+		});
 
-		lefttl
-		.to(large, { xPercent: 0, autoAlpha: 1, duration: 8, ease:'power2.inOut' })
+		
 
 	}
 

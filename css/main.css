@@ -368,6 +368,7 @@ svg {
     position: absolute;
     left: 2%;
     bottom: 0;
+    opacity: 0;
 }
 .monster svg #body {
     animation: breath 3s linear infinite;
