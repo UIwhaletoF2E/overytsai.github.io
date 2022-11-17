@@ -475,13 +475,16 @@ svg {
     color: var(--green);
     border: 6px solid #4CD30C;
     background-color: #000;
+        display: block;
+    margin: 0 auto;
+    width: fit-content;
 }
 .pain-point-groups {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
-    margin: 5% 0;
+    margin: 0 0 10% 0;
     padding-top: 15%;
 }
 .pain-points {
@@ -974,6 +977,16 @@ svg {
     background-color: #000;
     z-index: 0;
 }
+.star-sky {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 24%;
+    left: 0;
+}
+.star-sky #greenS, .star-sky #grayM {
+    animation: shinefaster 3s linear infinite;
+} 
 .speaker {
     width: 45%;
     position: relative;
@@ -1503,6 +1516,9 @@ footer p {
 }
 .shine-03 {
   animation: logoflicker 9s linear infinite;
+}
+.shine-f {
+  animation: shinefaster 3s linear infinite;
 }
 
 .light.shine-infinite {

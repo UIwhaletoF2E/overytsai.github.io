@@ -80,13 +80,13 @@ $(document).ready(function() {
 		.to({}, {duration: 5 }) // a little pause in between
 
 		.to('.pp02 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-		.to({}, {duration: 1 }) // a little pause in between
+		.to({}, {duration: 2 }) // a little pause in between
 		.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
 
 		.to({}, {duration: 5 }) // a little pause in between
 
 		.to('.pp03 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-		.to({}, {duration: 1 }) // a little pause in between
+		.to({}, {duration: 2 }) // a little pause in between
 		.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration:5, ease:'power2.inOut' })
 
 		 // a little pause in between
@@ -129,7 +129,7 @@ $(document).ready(function() {
 			    trigger: small,
 			    // pin: true,
 			    scrub: 0.5,
-			    start: "top center",
+			    start: "top bottom",
 			    end: "+=500px",
 			    scrub: true
 			  },
