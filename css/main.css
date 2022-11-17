@@ -475,7 +475,7 @@ svg {
     color: var(--green);
     border: 6px solid #4CD30C;
     background-color: #000;
-        display: block;
+    display: block;
     margin: 0 auto;
     width: fit-content;
 }
