@@ -1290,15 +1290,18 @@ footer p {
     .pain-img {
         margin-bottom: 30%;
     }
+    .pain-point-groups {
+        padding-top: 5%;
+    }
     /* block03  */
+    .deal-kanban {
+        margin-top: -30vh;
+    }
     .kanban-title {
         margin: 0 auto;
     }
-    .kanban-title::before {
-        top: -130%;
-    }
-    .kanban-title::after {
-        top: -130%;
+    .kanban-title::before, .kanban-title::after  {
+        top: -145%;
     }
     .deal-bg img {
         width:50%;
@@ -1318,7 +1321,14 @@ footer p {
     .topic-info {
         font-size: 40px;
     }
+    .topic-img {
+        width: 40%;
+    }
+
     /* block05 */
+    .schedule-row {
+         transform: translateY(0); 
+    }
     .schedule-block {
         font-size: 32px;
         padding: 6.35% 6%;
@@ -1332,7 +1342,10 @@ footer p {
     }
     /* block06 */
     .speaker-group::before {
-        clip-path: circle(64% at 50% 83%);
+        clip-path: circle(64% at 50% 75%);
+    }
+    .speaker-group {
+        padding: 7em 3em;
     }
     .speaker:nth-child(even) {
         margin-top: 15%;
@@ -1340,14 +1353,17 @@ footer p {
     .speaker {
         margin:2.5%;
     }
+    .speaker img {
+        width: 60%;
+    }
     .speaker-info {
-        width: 360px;
-        font-size: 16px;
-        right: -4%;
-        bottom: 15%;
+        width: 320px;
+        font-size: 15px;
+        right: -5%;
+        bottom: 13%;
     }
     .speaker:nth-child(even) .speaker-info {
-        bottom: -30%;
+        bottom: -35%;
     }
     .schedule-info::after {
         bottom: -0.5em;
@@ -1371,6 +1387,9 @@ footer p {
     /* block07 */
     .QA-tabs {
         font-size: 24px
+    }
+    .tabs-nav {
+        min-width: 25%;
     }
     /* block08 */
     .company-title {
