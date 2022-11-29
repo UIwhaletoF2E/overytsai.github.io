@@ -1472,6 +1472,9 @@ footer p {
         width: 100%;
     }
     /* Banner */
+    #banner .section-info {
+        min-width:90vw;
+    }
     #banner .title-group {
         min-height: 28vh;
     }
