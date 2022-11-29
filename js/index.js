@@ -58,38 +58,60 @@ $(document).ready(function() {
 		var block = gsap.utils.toArray('.section-block2');
 		var points =gsap.utils.toArray('.pain-points')
 
-		gsap.set('.pain-img', {xPercent:-80,autoAlpha: 0})
-		gsap.set('.pain-mask', {autoAlpha: 0})
+		
+		if (screen.width < 800) {
+			gsap.set('.pain-points', {xPercent:50,autoAlpha: 0})
+			points.forEach((point, i) => {
+				var mpointtl = gsap.timeline({
+				  scrollTrigger: { 
+					trigger: point,
+					// pin: true,
+					scrub: 0.5,
+					start: "top top",
+					end: "+=300px",
+					scrub: true
+				  },
+				});
+	
+				mpointtl
+				.to(point, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' });
+			});
+		}
+		else {
+			gsap.set('.pain-img', {xPercent:-80,autoAlpha: 0})
+			gsap.set('.pain-mask', {autoAlpha: 0})
 
-		var paintl = gsap.timeline({
-		  scrollTrigger: { 
-		    trigger: block,
-		    pin: true,
-		    scrub: 0.5,
-		    start: "top top",
-		    end: () => `+=${points.clientHeight}`,
-		    // end: "+=50px"
-		  },
-		})
+			var paintl = gsap.timeline({
+			  scrollTrigger: { 
+			    trigger: block,
+			    pin: true,
+			    scrub: 0.5,
+			    start: "top top",
+			    end: () => `+=${points.clientHeight}`,
+			    // end: "+=50px"
+			  },
+			})
+				paintl
+			.to('.pp01 .pain-mask', { autoAlpha: 1, duration: 7 }) 
+			.to({}, {duration: 1 }) // a little pause in between
+			.to('.pp01 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
 
-		paintl
-		.to('.pp01 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-		.to({}, {duration: 1 }) // a little pause in between
-		.to('.pp01 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
+			.to({}, {duration: 5 }) // a little pause in between
 
-		.to({}, {duration: 5 }) // a little pause in between
+			.to('.pp02 .pain-mask', { autoAlpha: 1, duration: 7 }) 
+			.to({}, {duration: 2 }) // a little pause in between
+			.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
 
-		.to('.pp02 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-		.to({}, {duration: 2 }) // a little pause in between
-		.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
+			.to({}, {duration: 5 }) // a little pause in between
 
-		.to({}, {duration: 5 }) // a little pause in between
+			.to('.pp03 .pain-mask', { autoAlpha: 1, duration: 7 }) 
+			.to({}, {duration: 2 }) // a little pause in between
+			.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration:5, ease:'power2.inOut' })
 
-		.to('.pp03 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-		.to({}, {duration: 2 }) // a little pause in between
-		.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration:5, ease:'power2.inOut' })
+			 // a little pause in between
+			}
 
-		 // a little pause in between
+		
 	}
 
 	var dealLoading = function() {
@@ -119,41 +141,79 @@ $(document).ready(function() {
 		var small = gsap.utils.toArray('.schedule-small');
 		var large = gsap.utils.toArray('.schedule-large');
 
-		gsap.set('.schedule-small', {xPercent:50,autoAlpha: 0})
-		gsap.set('.schedule-large', {xPercent:-120,autoAlpha: 0})
-
-		
-		small.forEach((small, i) => {
-			var righttl = gsap.timeline({
-			  scrollTrigger: { 
-			    trigger: small,
-			    // pin: true,
-			    scrub: 0.5,
-			    start: "top bottom",
-			    end: "+=500px",
-			    scrub: true
-			  },
+		if ($(window).width() > 960) {
+			gsap.set('.schedule-small', {xPercent:50,autoAlpha: 0})
+			gsap.set('.schedule-large', {xPercent:-120,autoAlpha: 0})
+			small.forEach((small, i) => {
+				var righttl = gsap.timeline({
+				  scrollTrigger: { 
+					trigger: small,
+					// pin: true,
+					scrub: 0.5,
+					start: "top bottom",
+					end: "+=500px",
+					scrub: true
+				  },
+				});
+				righttl
+				.to(small, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut', delay: 1 });
+	
 			});
-			righttl
-			.to(small, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut', delay: 1 });
-
-		});
-		
-		large.forEach((large, i) => {
-			var lefttl = gsap.timeline({
-			  scrollTrigger: { 
-			    trigger: large,
-			    // pin: true,
-			    scrub: 0.5,
-			    start: "top center+=100",
-			    end: "+=300px",
-			    scrub: true
-			  },
+			
+			large.forEach((large, i) => {
+				var lefttl = gsap.timeline({
+				  scrollTrigger: { 
+					trigger: large,
+					// pin: true,
+					scrub: 0.5,
+					start: "top center+=100",
+					end: "+=300px",
+					scrub: true
+				  },
+				});
+	
+				lefttl
+				.to(large, { xPercent: 0, autoAlpha: 1, duration: 8, ease:'power2.inOut' });
+			});
+		}
+		else {
+			gsap.set('.schedule-small', {xPercent:50,autoAlpha: 0})
+			gsap.set('.schedule-large', {xPercent:-80,autoAlpha: 0})
+			small.forEach((small, i) => {
+				var righttl = gsap.timeline({
+				  scrollTrigger: { 
+					trigger: small,
+					// pin: true,
+					scrub: 0.5,
+					start: "top bottom",
+					end: "+=500px",
+					scrub: true
+				  },
+				});
+				righttl
+				.to(small, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut', delay: 1 });
+	
+			});
+			
+			large.forEach((large, i) => {
+				var lefttl = gsap.timeline({
+				  scrollTrigger: { 
+					trigger: large,
+					// pin: true,
+					scrub: 0.5,
+					start: "top center-=200px",
+					end: "+=300px",
+					scrub: true
+				  },
+				});
+	
+				lefttl
+				.to(large, { xPercent: 0, autoAlpha: 1, duration: 8, ease:'power2.inOut' });
 			});
 
-			lefttl
-			.to(large, { xPercent: 0, autoAlpha: 1, duration: 8, ease:'power2.inOut' });
-		});
+		}
+		
+		
 
 		
 
@@ -171,7 +231,8 @@ $(document).ready(function() {
 	}
 	//about three topic
 	var topicTV = function() {
-		gsap.registerPlugin(ScrollTrigger);
+		if (screen.width > 960) {
+			gsap.registerPlugin(ScrollTrigger);
 		/* Main navigation */
 		let topicsSection = document.querySelector(".section-block4"),
 			  topicsContainer = document.querySelector("#topics-container"),
@@ -238,6 +299,8 @@ $(document).ready(function() {
 		    return containerAnimation ? st.start + (triggers[i].start / containerAnimation.duration()) * (st.end - st.start) : triggers[i].start;
 		  };
 		}
+	  }
+		
 	}
 
 	// 3D Card 
@@ -320,5 +383,5 @@ $(document).ready(function() {
 	dealLoading()
 	topicTV()
 	fadeinTwoSide()
-	rotateCard()
+	//rotateCard()
 });

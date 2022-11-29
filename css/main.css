@@ -471,7 +471,6 @@ svg {
     text-align: center;
     letter-spacing: 1.5rem;
     padding: 1em 3em;
-    margin: 0 auto;
     color: var(--green);
     border: 6px solid #4CD30C;
     background-color: #000;
@@ -596,6 +595,7 @@ svg {
   flex-wrap: nowrap;
   padding: 0;
   overflow: hidden;
+  width: 400%;
 }
 .section-block4 #topics-container .topic-panel {
   position: relative;
@@ -1404,7 +1404,13 @@ footer p {
 
 }
 
-@media(max-width: 768px) {
+@media(max-width: 800px) {
+    body::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
+    body {
+        overflow-x: hidden;
+    }
     .header {
         /*position: fixed;*/
         width: 100vw;
@@ -1423,7 +1429,7 @@ footer p {
     .main-btn.log-in {
         display: none;
     }
-    .menu-list {
+    .menu-list {        
         max-height: 0px;
         overflow: hidden;
         display: block;
@@ -1445,9 +1451,10 @@ footer p {
         background-color: var(--white);
         width: 100vw;
         padding: 1em 0;
-    }
-    .menu-list li {
         border-top: 1px solid #000;
+    }
+    .menu-list li a {
+        font-size: 15px;
     }
 
     .menu-list li a:hover {
@@ -1474,24 +1481,29 @@ footer p {
     /* Banner */
     #banner .section-info {
         min-width:90vw;
+        left: 2%;
     }
     #banner .title-group {
         min-height: 28vh;
     }
     #banner .index-title, .title-group h1 {
-        font-size: 4em;
+        font-size: 8em;
         margin: 0 0 0.2em;
         filter: drop-shadow(-6px 4px 0px #fff);
     }
     .index-title ~ .typed-cursor {
-        font-size: 4em;
+        font-size: 8em;
         transform: translateY(-0.5rem); 
         filter: drop-shadow(-4px 4px 0px #fff);
     }
     .title-shine{
-        right: 4.5%;
-        top: -11%;
-        transform: scale(.5);
+        right: 12.5%;
+        top: -9%;
+        transform: scale(.6);
+    }
+    #banner .sub-title, .title-group h2,
+    .sub-title ~ .typed-cursor {
+        font-size: 3em;
     }
     .star-group {
         display: none;
@@ -1525,8 +1537,124 @@ footer p {
     .banner-right {
         display: none;
     }
-}
+    /* section 2*/
+    .wall-block {    
+        background-image: url(../img/m_wall.svg);
+    }
+    .pain-title {
+        letter-spacing: .8rem;
+        padding: 1rem;
+    }
+    .pain-points {
+        margin: 8% 22%;
+        height: 79vh;
+    }
+    .pain-mask {
+        background-size: 100% 100%;
+        z-index: 10;
+        width: 100%;
+        min-height: 120vh;
+    }
+    /* ksection 3 */
+    .kanban-title {
+        font-size: 80px;
+    }
+    .kanban-title::before, .kanban-title::after {
+        top: -126%;
+    }
+    .deal-bg {
+        width: 100vw;
+    }
+    .deal-bg img {
+        width: 40%;
+    }
+    .deal-bg img:first-child {
+        width: 22%;
+        position: absolute;
+        left: -3%;
+        bottom: 15%;
+    }
+    .deal-bg img:last-child {
+        width: 20%;
+        position: absolute;
+        right: -4%;
+    }
+    .deal-role {
+        left: 17%;
+    }
 
+    /* section 4*/
+    .section-block4 #topics-container {
+        width: 100vw;
+    }
+    /* section 5 */
+    .schedule-large {
+        font-size: 30px;
+    }
+    .schedule-block {
+        font-size: 24px;
+        padding: 5% 3%;
+    }
+    .schedule-block h6 {
+        line-height: 1.5;
+    }
+    .schedule-info {
+        font-size: 16px;
+    }
+    .schedule-info h4 {
+        font-size: 1em;
+        margin: 0;
+    }
+    .schedule-info::after {
+        width: 24px;
+        height: 10px;
+    }
+    .schedule-small {
+        width: 48%;
+        font-size: 42px;
+    }
+    .schedule h4 {
+        font-size: .8em;
+        margin: .5em 0;
+    }
+    .et-talk span {
+        font-size: 1.5em;
+    }
+    /* section 6*/
+    .speaker-group::before {
+        clip-path: circle(102% at 50% 85%);
+    }
+    .speaker-group {
+        margin-top: 0;
+        flex-direction: column;
+    }
+    .speaker {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .speaker:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .speaker img {
+        width: 40%;
+    }
+    .speaker-info{
+        position: unset;
+        width: 55%;
+    }
+    .company-list img {
+        width: 100%;
+        height: auto;
+    }
+}
+@media(max-width: 767px) {
+    .pain-title {
+        font-size: 20px;
+    }
+}
 /* CSS keyframe animation*/
 
 .shine-infinite {
