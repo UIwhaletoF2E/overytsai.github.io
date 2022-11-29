@@ -58,7 +58,7 @@ $(document).ready(function() {
 		var block = gsap.utils.toArray('.section-block2');
 		var points =gsap.utils.toArray('.pain-points')
 
-		gsap.set('.pain-img', {xPercent:-50,autoAlpha: 0})
+		gsap.set('.pain-img', {xPercent:-80,autoAlpha: 0})
 		gsap.set('.pain-mask', {autoAlpha: 0})
 
 		var paintl = gsap.timeline({
@@ -240,6 +240,61 @@ $(document).ready(function() {
 		}
 	}
 
+	// 3D Card 
+	var rotateCard = function(){
+		// var rotateMax = 10;
+		// var mouseArea = $('#section6');
+		// var speakerCard = $('.speaker');
+		// function transformElement(x, y) {
+		//   let element = element.getBoundingClientRect();
+		//   let rX = -(y - box.y - element.height / 2) / rotateMax;
+		//   let rY = (x - box.x - element.width / 2) / rotateMax;
+
+		//   speakerCard.style.transform = "rotateX(" + rX + "deg) " +
+		//   "rotateY(" + rY + "deg)";
+		// }
+
+		// for (var i = 0 ; i < speakerCard.length; i++) {
+		//    mouseArea.addEventListener('mousemove', e => {
+		//      window.requestAnimationFrame(function () {
+		//        transformElement(e.clientX, e.clientY);
+		//      });
+		//    });
+
+		//    mouseArea.addEventListener('mouseleave', e => {
+		//      window.requestAnimationFrame(function () {
+		//        speakerCard.style.transform = "rotateX(0) rotateY(0)";
+		//      });
+		//    }); 
+		// }
+		let constrain = 20;
+		let mouseOverContainer = document.getElementById("section6");
+		let ex1Layer = document.getElementById("ex1-layer");
+
+		function transforms(x, y, el) {
+		  let box = el.getBoundingClientRect();
+		  let calcX = -(y - box.y - (box.height / 2)) / constrain;
+		  let calcY = (x - box.x - (box.width / 2)) / constrain;
+		  
+		  return "perspective(100px) "
+		    + "   rotateX("+ calcX +"deg) "
+		    + "   rotateY("+ calcY +"deg) ";
+		};
+
+		 function transformElement(el, xyEl) {
+		  el.style.transform  = transforms.apply(null, xyEl);
+		}
+
+		mouseOverContainer.onmousemove = function(e) {
+		  let xy = [e.clientX, e.clientY];
+		  let position = xy.concat([ex1Layer]);
+
+		  window.requestAnimationFrame(function(){
+		    transformElement(ex1Layer, position);
+		  });
+		};
+	}
+
 	//QA tab page 
 	$('#tabs-nav > li > a').click(function(event){
 		event.preventDefault();
@@ -265,4 +320,5 @@ $(document).ready(function() {
 	dealLoading()
 	topicTV()
 	fadeinTwoSide()
+	rotateCard()
 });
