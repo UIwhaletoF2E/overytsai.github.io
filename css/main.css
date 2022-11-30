@@ -597,7 +597,7 @@ svg {
   overflow: hidden;
   width: 400%;
 }
-.section-block4 #topics-container .topic-panel {
+.topic-panel {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -608,13 +608,13 @@ svg {
   text-align: left;
   font-size: 45px;
 }
-.section-block4 #topics-container .topic-panel img {
+.topic-panel img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-.section-block4 #topics-container .topic-panel .anchor-panel,
-.section-block4 #topics-container .topic-panel .nav-panel {
+.topic-panel .anchor-panel,
+.topic-panel .nav-panel {
   color: #000;
   text-transform: uppercase;
   margin-right: 2rem;
@@ -1587,6 +1587,14 @@ footer p {
     /* section 4*/
     .section-block4 #topics-container {
         width: 100vw;
+        flex-direction: column;
+    }
+    .section4-bg {
+        background-image: unset;
+        background-color: #000;
+    }
+    .section-block4 #topics-container #topic-start {
+        display:none;
     }
     /* section 5 */
     .schedule-large {
@@ -1656,11 +1664,77 @@ footer p {
     }
 }
 @media(max-width: 767px) {
+    #banner .sub-title, .title-group h2, .sub-title ~ .typed-cursor {
+        font-size: 2em;
+    }
     .monster svg {
         width: 5em;
     }
+    #banner .index-title, .title-group h1, .index-title ~ .typed-cursor {
+        font-size: 4.5em;
+        margin: 0 0 .5em;
+    }
+    .main-btn.big-btn {
+        font-size: 20px;
+        line-height: 32px;
+        margin: 0.5em 0;
+    }
     .pain-title {
         font-size: 20px;
+    }
+   
+    .pain-points {
+        margin: 0 22%;
+        height: 60vh;
+    }
+    .pain-mask {
+        min-height: 60vh;
+        top: -6%;
+    }
+    #section3 {
+        margin-top: -60vh;
+    }
+    .kanban-title::before, .kanban-title::after {
+        top: -62%;
+    }
+    .kanban-title {
+        font-size: 50px;
+        padding: 1em;
+    }
+    .deal-block {
+        margin-top: 12vh;
+    }
+    .deal-block p {
+        font-size: 30px;
+    }
+    .deal-bg img:first-child {
+        width: 30%;
+        bottom: 10%;
+    }
+    .deal-bg img:last-child {
+        width: 30%;
+        right: -5%;
+    }
+    .deal-role img {
+        width: 30vw;
+        height: auto;
+    }
+    .topic-row {
+        padding: 0;
+    }
+    .topic-img {
+        width: 30%;
+    }
+    .topic-panel {
+        height: auto;
+        padding-left: 10px;
+    }
+    .topic-info {
+        font-size: 20px;
+        min-width: 50%;
+    }
+    .anchor svg {
+        width: 30px;
     }
 }
 /* CSS keyframe animation*/

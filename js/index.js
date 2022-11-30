@@ -49,67 +49,68 @@ $(document).ready(function() {
 		    .to(lightpoint, {duration:.5,x: 0, y:0, scale: 1, alpha: 1});
 		}
 		lighting()
-		
+		titleShinning()
 	}
 	else {
-	   titleShinning()
+		gsap.fromTo(".fade-in", {x: -30, y:10, autoAlpha: 0 }, {x: 0, y:0, duration: 1.5, autoAlpha: 1, delay:3.8 });
+		gsap.fromTo(".fade-in-more", {x: -50, y:20, autoAlpha: 0 }, {x: 0, y:0, duration: 1.5, autoAlpha: 1, delay:4.2 });
+	   
 	};
 	var painPoint = function() {
 		var block = gsap.utils.toArray('.section-block2');
 		var points =gsap.utils.toArray('.pain-points')
-
-		
-		if (screen.width < 800) {
-			gsap.set('.pain-points', {xPercent:50,autoAlpha: 0})
-			points.forEach((point, i) => {
-				var mpointtl = gsap.timeline({
+		installMediaQueryWatcher("(min-width: 960px)", (matches) => {
+  
+			if (matches) {
+				gsap.set('.pain-img', {xPercent:-80,autoAlpha: 0})
+				gsap.set('.pain-mask', {autoAlpha: 0})
+				var paintl = gsap.timeline({
 				  scrollTrigger: { 
-					trigger: point,
-					// pin: true,
-					scrub: 0.5,
-					start: "top top",
-					end: "+=300px",
-					scrub: true
+				    trigger: block,
+				    pin: true,
+				    scrub: 0.5,
+				    start: "top top",
+				    end: () => `+=${points.clientHeight}`,
+				    // end: "+=50px"
 				  },
+				})
+					paintl
+				.to('.pp01 .pain-mask', { autoAlpha: 1, duration: 7 }) 
+				.to({}, {duration: 1 }) // a little pause in between
+				.to('.pp01 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
+
+				.to({}, {duration: 5 }) // a little pause in between
+
+				.to('.pp02 .pain-mask', { autoAlpha: 1, duration: 7 }) 
+				.to({}, {duration: 2 }) // a little pause in between
+				.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
+
+				.to({}, {duration: 5 }) // a little pause in between
+
+				.to('.pp03 .pain-mask', { autoAlpha: 1, duration: 7 }) 
+				.to({}, {duration: 2 }) // a little pause in between
+				.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration:5, ease:'power2.inOut' })
+
+				 // a little pause in between
+			  
+			} else {
+				gsap.set('.pain-points', {xPercent:30,autoAlpha: 0})
+				points.forEach((point, i) => {
+					var mpointtl = gsap.timeline({
+					  scrollTrigger: { 
+						trigger: point,
+						start: "top bottom",
+						end: '+=50%', 
+						pinSpacing: true,
+						scrub: true
+					  },
+					});
+				
+					mpointtl
+					.to(point, { xPercent: 0, autoAlpha: 1, duration: 2, ease:'power2.inOut' });
 				});
-	
-				mpointtl
-				.to(point, { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' });
-			});
-		}
-		else {
-			gsap.set('.pain-img', {xPercent:-80,autoAlpha: 0})
-			gsap.set('.pain-mask', {autoAlpha: 0})
-
-			var paintl = gsap.timeline({
-			  scrollTrigger: { 
-			    trigger: block,
-			    pin: true,
-			    scrub: 0.5,
-			    start: "top top",
-			    end: () => `+=${points.clientHeight}`,
-			    // end: "+=50px"
-			  },
-			})
-				paintl
-			.to('.pp01 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-			.to({}, {duration: 1 }) // a little pause in between
-			.to('.pp01 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
-
-			.to({}, {duration: 5 }) // a little pause in between
-
-			.to('.pp02 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-			.to({}, {duration: 2 }) // a little pause in between
-			.to('.pp02 .pain-img', { xPercent: 0, autoAlpha: 1, duration: 5, ease:'power2.inOut' })
-
-			.to({}, {duration: 5 }) // a little pause in between
-
-			.to('.pp03 .pain-mask', { autoAlpha: 1, duration: 7 }) 
-			.to({}, {duration: 2 }) // a little pause in between
-			.to('.pp03 .pain-img', { xPercent: 0, autoAlpha: 1, duration:5, ease:'power2.inOut' })
-
-			 // a little pause in between
 			}
+		  });
 
 		
 	}
@@ -231,77 +232,82 @@ $(document).ready(function() {
 	}
 	//about three topic
 	var topicTV = function() {
-		if (screen.width > 960) {
-			gsap.registerPlugin(ScrollTrigger);
-		/* Main navigation */
-		let topicsSection = document.querySelector(".section-block4"),
-			  topicsContainer = document.querySelector("#topics-container"),
-		    anchors = gsap.utils.toArray(".anchor"),
-			  tween;
+		installMediaQueryWatcher("(min-width: 800px)", (matches) => {
+  
+			if (matches) {
+				gsap.registerPlugin(ScrollTrigger);
+				/* Main navigation */
+				let topicsSection = document.querySelector(".section-block4"),
+				topicsContainer = document.querySelector("#topics-container"),
+				anchors = gsap.utils.toArray(".anchor"),
+				tween;
 
+				/* Panels */
+				const panels = gsap.utils.toArray("#topics-container .topic-panel");
+				const snap = 1 / (panels.length - 1);
+				let activeNav;
 
-		/* Panels */
-		const panels = gsap.utils.toArray("#topics-container .topic-panel");
-		const snap = 1 / (panels.length - 1);
-		let activeNav;
-
-		tween = gsap.to(panels, {
-			xPercent: -100 * ( panels.length - 1 ),
-			ease: "none",
-			scrollTrigger: {
-				trigger: "#topics-container",
-				pin: true,
-				start: "top top",
-				scrub: 1,
-				snap: {
-					snapTo: 1 / (panels.length - 1),
-					inertia: false,
-					duration: {min: 0.1, max: 0.1}
-				},
-				end: () => "+=" + (topicsContainer.offsetWidth - innerWidth)
+				tween = gsap.to(panels, {
+					xPercent: -100 * ( panels.length - 1 ),
+					ease: "none",
+					scrollTrigger: {
+						trigger: "#topics-container",
+						pin: true,
+						start: "top top",
+						scrub: 1,
+						snap: {
+							snapTo: 1 / (panels.length - 1),
+							inertia: false,
+							duration: {min: 0.1, max: 0.1}
+						},
+						end: () => "+=" + (topicsContainer.offsetWidth - innerWidth)
+					}
+				});
+			
+				anchors.forEach((anchor, i) => {
+				  let targetElem = document.querySelector(anchor.getAttribute("href"));
+					anchor.addEventListener("click", function(e) {
+						e.preventDefault();
+						let y = targetElem;
+						if (targetElem && topicsContainer.isSameNode(targetElem.parentElement)) {
+							let totalScroll = tween.scrollTrigger.end - tween.scrollTrigger.start,
+								totalMovement = (panels.length - 1) * targetElem.offsetWidth;
+							y = Math.round(tween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
+						}
+						gsap.to(window, {
+							scrollTo: {
+								y: y,
+								autoKill: false
+							},
+							duration: 1
+						});
+					});
+				});
+				function getScrollLookup(targets, position, containerAnimation) {
+				  let triggers = gsap.utils.toArray(targets).map(el => ScrollTrigger.create({
+				        trigger: el,
+				        start: position || "top top",
+				        refreshPriority: -10,
+				        containerAnimation: containerAnimation
+				      })),
+				      st = containerAnimation && containerAnimation.scrollTrigger;
+				  return target => {
+				    let t = gsap.utils.toArray(target)[0],
+				        i = triggers.length;
+				    while (i-- && triggers[i].trigger !== t) {};
+				    if (i < 0) {
+				      return console.warn("target not found", target);
+				    } 
+				    return containerAnimation ? st.start + (triggers[i].start / containerAnimation.duration()) * (st.end - st.start) : triggers[i].start;
+				  };
+				}
 			}
 		});
-
-		anchors.forEach((anchor, i) => {
-		  let targetElem = document.querySelector(anchor.getAttribute("href"));
-			anchor.addEventListener("click", function(e) {
-				e.preventDefault();
-				let y = targetElem;
-				if (targetElem && topicsContainer.isSameNode(targetElem.parentElement)) {
-					let totalScroll = tween.scrollTrigger.end - tween.scrollTrigger.start,
-						totalMovement = (panels.length - 1) * targetElem.offsetWidth;
-					y = Math.round(tween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
-				}
-				gsap.to(window, {
-					scrollTo: {
-						y: y,
-						autoKill: false
-					},
-					duration: 1
-				});
-			});
-		});
-		function getScrollLookup(targets, position, containerAnimation) {
-		  let triggers = gsap.utils.toArray(targets).map(el => ScrollTrigger.create({
-		        trigger: el,
-		        start: position || "top top",
-		        refreshPriority: -10,
-		        containerAnimation: containerAnimation
-		      })),
-		      st = containerAnimation && containerAnimation.scrollTrigger;
-		  return target => {
-		    let t = gsap.utils.toArray(target)[0],
-		        i = triggers.length;
-		    while (i-- && triggers[i].trigger !== t) {};
-		    if (i < 0) {
-		      return console.warn("target not found", target);
-		    } 
-		    return containerAnimation ? st.start + (triggers[i].start / containerAnimation.duration()) * (st.end - st.start) : triggers[i].start;
-		  };
-		}
-	  }
-		
+			
+	
 	}
+		
+	
 
 	// 3D Card 
 	var rotateCard = function(){
@@ -357,6 +363,13 @@ $(document).ready(function() {
 		  });
 		};
 	}
+
+	//RWD control GSAP
+	function installMediaQueryWatcher(mediaQuery, layoutChangedCallback) {
+		var mql = window.matchMedia(mediaQuery);
+		mql.addListener(function (e) { return layoutChangedCallback(e.matches); });
+		layoutChangedCallback(mql.matches);
+	  }
 
 	//QA tab page 
 	$('#tabs-nav > li > a').click(function(event){
