@@ -1658,9 +1658,15 @@ footer p {
     .section-block7 {
         min-height: unset;
     }
+    .QA-tabs {
+        flex-direction: column;
+    }
     .company-list img {
         width: 100%;
         height: auto;
+    }
+    #section8 .sign-up {
+        font-size: 60px;
     }
 }
 @media(max-width: 767px) {
