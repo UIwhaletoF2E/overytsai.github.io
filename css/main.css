@@ -567,10 +567,10 @@ svg {
     justify-content: center;
     position: absolute;
     bottom: 0;
-    left: 37%;
+    left: 34%;
 }
-.deal-ui, .deal-f2e {
-    width: 100%;
+.deal-role img {
+    width: 300px;
     height: auto;
 }
 
@@ -720,7 +720,7 @@ svg {
     mask-repeat: no-repeat;  
     width: 96%;
     height: 372px;
-    transform: translate(3%, 4%);
+    transform: translate(4%);
 }
 #topic-1 {
     color: #4CD30C;
