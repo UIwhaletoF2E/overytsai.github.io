@@ -70,7 +70,7 @@ $(document).ready(function() {
 				    pin: true,
 				    scrub: 0.5,
 				    start: "top top",
-				    end: () => `+=${points.clientHeight}`,
+				    end: () => `+=${points.clientHeight}*3`,
 				    // end: "+=50px"
 				  },
 				})
