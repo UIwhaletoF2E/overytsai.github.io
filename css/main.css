@@ -517,6 +517,9 @@ svg {
     height: auto;
 }
 /* block03 */
+#section3 {
+    margin-top: -30vh;
+}
 .kanban-title {
     font-size: 120px;
     padding: 0.5em 1em;
@@ -529,13 +532,14 @@ svg {
     background-size: 24px 24px, 24px 24px, 24px 24px, 24px 24px;
     background-position: 0 0, 0 100%, 0 0, 100% 0;
     animation: linearGradientMove .3s infinite linear;
+    background-color:#000;
 }
 .kanban-title::before {
     content: '▐';
     position: absolute;
     z-index: -1;
     font-size: 1em;
-    transform: scaleY(5.5);
+    transform: scaleY(7.5);
     top: -118%;
 }
 .kanban-title::after {
@@ -543,7 +547,7 @@ svg {
     position: absolute;
     z-index: -1;
     font-size: 1em;    
-    transform: scaleY(5.5);
+    transform: scaleY(7.5);
     top: -118%;
     right: 20%;
 }
@@ -560,6 +564,7 @@ svg {
 .deal-bg {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 3%;
 }
 .deal-role {
     display: flex;
@@ -691,6 +696,9 @@ svg {
 .anchor.down svg {
     transform: rotate(180deg);
     margin-top: .5em;
+}
+.anchor:hover svg, .anchor.down:hover svg {
+    filter:unset;
 }
 #topic-start .topic-info img {
     max-height: 420px;
@@ -1307,7 +1315,7 @@ footer p {
         margin: 0 auto;
     }
     .kanban-title::before, .kanban-title::after  {
-        top: -145%;
+        top: -125%;
     }
     .deal-bg img {
         width:50%;

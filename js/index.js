@@ -69,8 +69,9 @@ $(document).ready(function() {
 				    trigger: block,
 				    pin: true,
 				    scrub: 0.5,
-				    start: "top top",
-				    end: () => `+=${points.clientHeight}*3`,
+				    start: "top top+=200px",
+					end: '+=330%', 
+				    // end: () => `+=${points.clientHeight}*3`,
 				    // end: "+=50px"
 				  },
 				})
