@@ -569,6 +569,10 @@ svg {
     bottom: 0;
     left: 37%;
 }
+.deal-ui, .deal-f2e {
+    width: 100%;
+    height: auto;
+}
 
 /* block04 */
 .section4-bg {
@@ -1319,10 +1323,7 @@ footer p {
     .deal-role {
         left: 30%;
     }
-    .deal-ui, .deal-f2e {
-        width: 100%;
-        height: auto;
-    }
+    
     /* block04 */
     .topic-info {
         font-size: 40px;
