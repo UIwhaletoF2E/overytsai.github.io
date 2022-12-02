@@ -1742,7 +1742,7 @@ footer p {
         line-height: 22px;
     }
     .pain-point-groups {
-        margin: 0 0 20% 0;
+        margin: 0 0 30% 0;
     }
     .pain-title {
         font-size: 20px;
@@ -1785,6 +1785,7 @@ footer p {
     }
     .topic-row {
         flex-direction: column-reverse;
+        align-items: flex-start;
     }
     .topic-img {
         width: 100%;
@@ -1793,20 +1794,19 @@ footer p {
     .topic-img img {
         width: 50%;
         height: auto;
-        transform: translate(50%, -18%);
+        transform: translate(50%, 0);
     }
     .topic-panel {
         height: auto;
         padding-left: 10px;
     }
     .topic-info {
-        font-size: 18px;
+        font-size: 36px;
         min-width: 40%;
     }
     .look-more {
-        font-size: .5em;
-        transform: translateX(-3px) translateY(-3px);
-        box-shadow: 5px 5px 0 #aaa;
+        font-size: 1em;
+        transform: translateX(-5px) translateY(-5px);
     }
     .schedule-small {
         width: 54%;
@@ -1822,7 +1822,7 @@ footer p {
     .speaker-group {
         padding: 0 1em;
     }
-    .speaker {
+    .speaker, .speaker:nth-child(even) {
         flex-direction: column;
         padding: 0 5%;
         margin: 1em auto;
