@@ -180,7 +180,7 @@ $(document).ready(function() {
 		}
 		else {
 			gsap.set('.schedule-small', {xPercent:50,autoAlpha: 0})
-			gsap.set('.schedule-large', {xPercent:-80,autoAlpha: 0})
+			gsap.set('.schedule-large', {xPercent:-50,autoAlpha: 0})
 			small.forEach((small, i) => {
 				var righttl = gsap.timeline({
 				  scrollTrigger: { 
@@ -203,8 +203,8 @@ $(document).ready(function() {
 					trigger: large,
 					// pin: true,
 					scrub: 0.5,
-					start: "top center-=200px",
-					end: "+=300px",
+					start: "top center-=300px",
+					end: "+=100px",
 					scrub: true
 				  },
 				});
@@ -310,60 +310,7 @@ $(document).ready(function() {
 		
 	
 
-	// 3D Card 
-	var rotateCard = function(){
-		// var rotateMax = 10;
-		// var mouseArea = $('#section6');
-		// var speakerCard = $('.speaker');
-		// function transformElement(x, y) {
-		//   let element = element.getBoundingClientRect();
-		//   let rX = -(y - box.y - element.height / 2) / rotateMax;
-		//   let rY = (x - box.x - element.width / 2) / rotateMax;
-
-		//   speakerCard.style.transform = "rotateX(" + rX + "deg) " +
-		//   "rotateY(" + rY + "deg)";
-		// }
-
-		// for (var i = 0 ; i < speakerCard.length; i++) {
-		//    mouseArea.addEventListener('mousemove', e => {
-		//      window.requestAnimationFrame(function () {
-		//        transformElement(e.clientX, e.clientY);
-		//      });
-		//    });
-
-		//    mouseArea.addEventListener('mouseleave', e => {
-		//      window.requestAnimationFrame(function () {
-		//        speakerCard.style.transform = "rotateX(0) rotateY(0)";
-		//      });
-		//    }); 
-		// }
-		let constrain = 20;
-		let mouseOverContainer = document.getElementById("section6");
-		let ex1Layer = document.getElementById("ex1-layer");
-
-		function transforms(x, y, el) {
-		  let box = el.getBoundingClientRect();
-		  let calcX = -(y - box.y - (box.height / 2)) / constrain;
-		  let calcY = (x - box.x - (box.width / 2)) / constrain;
-		  
-		  return "perspective(100px) "
-		    + "   rotateX("+ calcX +"deg) "
-		    + "   rotateY("+ calcY +"deg) ";
-		};
-
-		 function transformElement(el, xyEl) {
-		  el.style.transform  = transforms.apply(null, xyEl);
-		}
-
-		mouseOverContainer.onmousemove = function(e) {
-		  let xy = [e.clientX, e.clientY];
-		  let position = xy.concat([ex1Layer]);
-
-		  window.requestAnimationFrame(function(){
-		    transformElement(ex1Layer, position);
-		  });
-		};
-	}
+	
 
 	//RWD control GSAP
 	function installMediaQueryWatcher(mediaQuery, layoutChangedCallback) {

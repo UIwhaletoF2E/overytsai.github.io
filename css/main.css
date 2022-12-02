@@ -589,6 +589,9 @@ svg {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.topic-title {
+    display:none;
+}
 .full-screen {
   display: block;
   width: 100%;
@@ -1600,6 +1603,7 @@ footer p {
     /* section 4*/
     .section-block4 #topics-container {
         width: 100vw;
+        height: auto;
         flex-direction: column;
     }
     .section4-bg {
@@ -1609,6 +1613,24 @@ footer p {
     .section-block4 #topics-container #topic-start {
         display:none;
     }
+    .topic-title {
+        display: block;
+        font-size: 72px;
+        letter-spacing: 1.5rem;
+    }
+    .topic-panel {
+        min-height: 50vh;
+    }
+    .topic-info {
+        font-size: 25px;
+    }
+    .topic-img {
+        width: 60%;
+    }
+    .anchor svg {
+        display:none;
+    }
+
     /* section 5 */
     .schedule-large {
         font-size: 30px;
@@ -1625,6 +1647,7 @@ footer p {
     }
     .schedule-info h4 {
         font-size: 1em;
+        line-height: 1.25;
         margin: 0;
     }
     .schedule-info::after {
@@ -1639,6 +1662,22 @@ footer p {
         font-size: .8em;
         margin: .5em 0;
     }
+    .schedule-stream::after {
+        display: none;
+    }
+    .schedule-block-row {
+        flex-direction: column;
+    }
+    .schedule-review, .schedule-award {
+        width: 100%;
+        padding: 3%;
+        border-right: unset;
+        border-left: 3px solid var(--green);
+    }
+    .schedule-review .schedule-arrow {
+        width: 1.5em;
+        margin: 2em auto 1em 3em;
+    }
     .et-talk span {
         font-size: 1.5em;
     }
@@ -1648,7 +1687,7 @@ footer p {
     }
     .speaker-group {
         margin-top: 0;
-        flex-direction: column;
+        flex-direction: col umn;
     }
     .speaker {
         margin: 4% 0;
@@ -1686,6 +1725,9 @@ footer p {
     #banner .sub-title, .title-group h2, .sub-title ~ .typed-cursor {
         font-size: 2em;
     }
+    .monster {
+        bottom: 0;
+    }
     .monster svg {
         width: 5em;
     }
@@ -1694,20 +1736,23 @@ footer p {
         margin: 0 0 .5em;
     }
     .main-btn.big-btn {
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 18px;
+        letter-spacing: 5px;
         margin: 0.5em 0;
+        line-height: 22px;
+    }
+    .pain-point-groups {
+        margin: 0 0 20% 0;
     }
     .pain-title {
         font-size: 20px;
     }
-   
     .pain-points {
         margin: 0 22%;
-        height: 60vh;
+        height: 54vh;
     }
     .pain-mask {
-        min-height: 60vh;
+        min-height: 54vh;
         top: -6%;
     }
     #section3 {
@@ -1717,7 +1762,7 @@ footer p {
         top: -62%;
     }
     .kanban-title {
-        font-size: 50px;
+        font-size: 35px;
         padding: 1em;
     }
     .deal-block {
@@ -1739,21 +1784,60 @@ footer p {
         height: auto;
     }
     .topic-row {
-        padding: 0;
+        flex-direction: column-reverse;
     }
     .topic-img {
-        width: 30%;
+        width: 100%;
+        background-size: contain;
+    }
+    .topic-img img {
+        width: 50%;
+        height: auto;
+        transform: translate(50%, -18%);
     }
     .topic-panel {
         height: auto;
         padding-left: 10px;
     }
     .topic-info {
-        font-size: 20px;
-        min-width: 50%;
+        font-size: 18px;
+        min-width: 40%;
     }
-    .anchor svg {
-        width: 30px;
+    .look-more {
+        font-size: .5em;
+        transform: translateX(-3px) translateY(-3px);
+        box-shadow: 5px 5px 0 #aaa;
+    }
+    .schedule-small {
+        width: 54%;
+        font-size: 36px;
+        margin: 8% 0;
+    }
+    .schedule-large.schedule-update::after {
+        right: 55%;
+    }
+    .et-talk, .ticker-group {
+        display:none;
+    }
+    .speaker-group {
+        padding: 0 1em;
+    }
+    .speaker {
+        flex-direction: column;
+        padding: 0 5%;
+        margin: 1em auto;
+        width: 80%;
+    }
+    .speaker-info {
+        width: 100%;
+        font-size: 24px;
+    }
+    .speaker img {
+        width: 100%;
+    }
+    .QA-list summary {
+        border-radius: 10px;
+        margin-bottom: .5em;
     }
 }
 /* CSS keyframe animation*/
