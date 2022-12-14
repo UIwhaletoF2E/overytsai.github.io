@@ -101,7 +101,7 @@ $(document).ready(function() {
 					  scrollTrigger: { 
 						trigger: point,
 						start: "top bottom",
-						end: '+=50%', 
+						end: '+=40%', 
 						pinSpacing: true,
 						scrub: true
 					  },
@@ -204,7 +204,7 @@ $(document).ready(function() {
 					// pin: true,
 					scrub: 0.5,
 					start: "top center-=300px",
-					end: "+=100px",
+					end: "+=500px",
 					scrub: true
 				  },
 				});
